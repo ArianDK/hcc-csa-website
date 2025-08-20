@@ -1,0 +1,3 @@
+# Directory for SQLite database file (if using SQLite instead of MySQL)
+# The SQLite database file will be created here: csa.sqlite
+# Make sure this directory has proper write permissions
