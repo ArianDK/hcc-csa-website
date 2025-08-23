@@ -5,6 +5,25 @@
  * IMPORTANT: Update all REPLACE_ME values before deployment
  */
 
+// Auto-detect environment and set appropriate base URL
+if (!function_exists('getBaseUrl')) {
+    function getBaseUrl() {
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+        $host = $_SERVER['HTTP_HOST'];
+        $scriptName = $_SERVER['SCRIPT_NAME'];
+        
+        // Remove the filename from the path to get the directory
+        $path = dirname($scriptName);
+        
+        // If we're in the root directory, use empty path
+        if ($path === '/') {
+            $path = '';
+        }
+        
+        return $protocol . '://' . $host . $path;
+    }
+}
+
 return [
     'db' => [
         'driver' => 'mysql',        // or 'sqlite'
@@ -38,8 +57,8 @@ return [
     'app' => [
         'name' => 'Computer Science Association',
         'short_name' => 'CSA',
-        'domain' => 'localhost',              // Local development
-        'base_url' => 'http://localhost/hcc-csa-website', // Local development URL
+        'domain' => $_SERVER['HTTP_HOST'] ?? 'localhost',
+        'base_url' => getBaseUrl(),           // Auto-detected base URL
         'admin_email' => 'admin@test.local',  // Local testing email
         'timezone' => 'America/Chicago'
     ],
