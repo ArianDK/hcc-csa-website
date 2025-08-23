@@ -47,7 +47,7 @@ $currentYear = date('Y');
                     <p class="footer-description">
                         Building skills, projects, and community for all STEM majors at Houston Community College.
                     </p>
-                                         <img src="<?php echo $config['app']['base_url']; ?>/images/csa-logo.jpeg" alt="CSA Logo" class="footer-logo">
+                                         <img src="<?php echo $config['app']['base_url']; ?>/images/csa-transparent.jpg" alt="CSA Logo" class="footer-logo">
                 </div>
                 
                 <div class="footer-section">

@@ -14,10 +14,6 @@ $currentPage = basename($_SERVER['PHP_SELF'], '.php');
             <div class="brand">
                 <a href="<?php echo $config['app']['base_url']; ?>/" class="brand-link">
                     <img src="<?php echo $config['app']['base_url']; ?>/images/hcc-logo-white.png" alt="HCC Logo" class="brand-logo">
-                    <div class="brand-text">
-                        <span class="brand-name"><?php echo htmlspecialchars($config['app']['short_name']); ?></span>
-                        <span class="brand-subtitle">at HCC</span>
-                    </div>
                 </a>
             </div>
             
