@@ -8,7 +8,7 @@ session_start();
 require_once __DIR__ . '/config/database.php';
 
 $pageTitle = 'Computer Science Association - HCC';
-$pageDescription = 'Join the Computer Science Association at Houston Community College. Build skills, projects, and community - open to all STEM majors.';
+$pageDescription = 'Join the Computer Science Association at Houston City College. Build skills, projects, and community - open to all STEM majors.';
 
 // Get upcoming events
 try {
@@ -188,7 +188,7 @@ include __DIR__ . '/partials/header.php';
     <section class="section bg-secondary">
         <div class="container">
             <div class="text-center mb-8">
-                <h2>Join <?php echo $memberCount > 0 ? $memberCount . '+' : 'Our Growing'; ?> Community</h2>
+                <h2>Our Community</h2>
                 <p class="text-secondary">What our members say about CSA</p>
             </div>
             
