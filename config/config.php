@@ -9,8 +9,8 @@
 if (!function_exists('getBaseUrl')) {
     function getBaseUrl() {
         $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
-        $host = $_SERVER['HTTP_HOST'];
-        $scriptName = $_SERVER['SCRIPT_NAME'];
+        $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+        $scriptName = $_SERVER['SCRIPT_NAME'] ?? '/index.php';
         
         // Remove the filename from the path to get the directory
         $path = dirname($scriptName);
@@ -20,7 +20,13 @@ if (!function_exists('getBaseUrl')) {
             $path = '';
         }
         
-        return $protocol . '://' . $host . $path;
+        // Handle edge cases for different server configurations
+        $baseUrl = $protocol . '://' . $host . $path;
+        
+        // Debug: You can temporarily uncomment this line to see what URL is being generated
+        // error_log("Generated base URL: " . $baseUrl);
+        
+        return $baseUrl;
     }
 }
 
