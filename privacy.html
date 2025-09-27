@@ -1,23 +1,118 @@
-<?php
-/**
- * CSA Website - Privacy Policy
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy policy for the Computer Science Association at Houston Community College. Learn how we protect your personal information.">
+    <meta name="keywords" content="HCC, Houston Community College, Computer Science, Privacy Policy, Data Protection, Student Organization">
+    <meta name="author" content="Computer Science Association">
+    
+    <title>Privacy Policy - Computer Science Association at HCC</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yourusername.github.io/hcc-csa-website/privacy.html">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/hcc-csa-website/privacy.html">
+    <meta property="og:title" content="Privacy Policy - Computer Science Association at HCC">
+    <meta property="og:description" content="Privacy policy for the Computer Science Association at Houston Community College. Learn how we protect your personal information.">
+    <meta property="og:image" content="https://yourusername.github.io/hcc-csa-website/images/logo-gradient.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/hcc-csa-website/privacy.html">
+    <meta property="twitter:title" content="Privacy Policy - Computer Science Association at HCC">
+    <meta property="twitter:description" content="Privacy policy for the Computer Science Association at Houston Community College. Learn how we protect your personal information.">
+    <meta property="twitter:image" content="https://yourusername.github.io/hcc-csa-website/images/logo-gradient.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/global.css">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a365d">
+    <meta name="msapplication-TileColor" content="#1a365d">
+    
+    <!-- Skip to content link (for accessibility) -->
+    <style>
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-color);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 4px;
+        }
+        .skip-link:focus {
+            top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-session_start();
+<header class="site-header" role="banner">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo/Brand -->
+            <div class="brand">
+                <a href="index.html" class="brand-link">
+                    <img src="images/hcc-logo-white.png" alt="HCC Logo" class="brand-logo">
+                </a>
+            </div>
+            
+            <!-- Centered Navigation -->
+            <nav class="main-nav main-nav-centered" role="navigation" aria-label="Main navigation">
+                <ul class="nav-list nav-list-centered">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://eagleengage.hccs.edu/organization/csa" class="nav-link nav-cta" target="_blank">Join CSA</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile menu toggle -->
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </div>
+</header>
 
-$pageTitle = 'Privacy Policy - Computer Science Association at HCC';
-$pageDescription = 'Privacy policy for the Computer Science Association at Houston Community College. Learn how we protect your personal information.';
-
-include __DIR__ . '/partials/meta.php';
-include __DIR__ . '/partials/header.php';
-?>
+<!-- Sticky Join Button for Mobile -->
+<div class="sticky-join-mobile">
+    <a href="https://eagleengage.hccs.edu/organization/csa" class="btn btn-primary btn-block" target="_blank">Join CSA</a>
+</div>
 
 <main id="main-content">
     <section class="section">
         <div class="container" style="max-width: 800px;">
             <div class="text-center mb-8">
                 <h1>Privacy Policy</h1>
-                <p class="text-secondary">Last updated: <?php echo date('F j, Y'); ?></p>
+                <p class="text-secondary">Last updated: March 15, 2024</p>
             </div>
             
             <div class="card">
@@ -35,7 +130,7 @@ include __DIR__ . '/partials/header.php';
                         <li><strong>Personal Details:</strong> First name, last name, email address</li>
                         <li><strong>Academic Information:</strong> Major/field of study, campus (optional)</li>
                         <li><strong>Communication Preferences:</strong> Whether you consent to receive email updates</li>
-                        <li><strong>Verification Data:</strong> Email verification status and timestamps</li>
+                        <li><strong>Contact Information:</strong> Email address for communication purposes</li>
                     </ul>
                     
                     <h3>Website Usage Information</h3>
@@ -43,7 +138,7 @@ include __DIR__ . '/partials/header.php';
                     <ul>
                         <li><strong>Technical Data:</strong> IP address, browser type, device information</li>
                         <li><strong>Usage Analytics:</strong> Pages visited, time spent, interactions (stored locally)</li>
-                        <li><strong>Security Data:</strong> Rate limiting and fraud prevention information</li>
+                        <li><strong>Performance Data:</strong> Website loading times and error logs</li>
                     </ul>
                     
                     <h2>How We Use Your Information</h2>
@@ -176,15 +271,15 @@ include __DIR__ . '/partials/header.php';
                     
                     <h3>Required Services</h3>
                     <ul>
-                        <li><strong>CAPTCHA:</strong> reCAPTCHA or hCaptcha for spam prevention (Google/Intuition Machines privacy policies apply)</li>
-                        <li><strong>Email Service:</strong> SMTP provider for sending emails (encrypted transmission)</li>
-                        <li><strong>HCC Systems:</strong> Integration with college databases for student verification</li>
+                        <li><strong>GitHub Pages:</strong> Hosting our static website (GitHub privacy policy applies)</li>
+                        <li><strong>Email Service:</strong> Email communication through your preferred email provider</li>
+                        <li><strong>Discord:</strong> Member communication platform (Discord privacy policy applies)</li>
                     </ul>
                     
                     <h3>Optional Services</h3>
                     <ul>
-                        <li><strong>Discord:</strong> Member communication platform (Discord privacy policy applies)</li>
-                        <li><strong>Video Conferencing:</strong> Virtual events and meetings (provider privacy policies apply)</li>
+                        <li><strong>Social Media:</strong> Links to our social media accounts (respective privacy policies apply)</li>
+                        <li><strong>External Links:</strong> Links to external resources and partners</li>
                     </ul>
                     
                     <h2>Children's Privacy</h2>
@@ -239,8 +334,8 @@ include __DIR__ . '/partials/header.php';
                     </p>
                     
                     <div class="text-center mt-6">
-                        <a href="/join.php" class="btn btn-primary">Ready to Join CSA?</a>
-                        <a href="/about.php" class="btn btn-outline">Learn More About CSA</a>
+                        <a href="https://eagleengage.hccs.edu/organization/csa" class="btn btn-primary" target="_blank">Ready to Join CSA?</a>
+                        <a href="about.html" class="btn btn-outline">Learn More About CSA</a>
                     </div>
                 </div>
             </div>
@@ -248,4 +343,114 @@ include __DIR__ . '/partials/header.php';
     </section>
 </main>
 
-<?php include __DIR__ . '/partials/footer.php'; ?>
+<footer class="site-footer" role="contentinfo">
+    <style>
+    /* Improve footer section alignment and spacing */
+    .footer-main {
+        gap: var(--spacing-4) !important;
+        align-items: start !important; /* Align all sections to top */
+        justify-items: center !important; /* Center content within grid items */
+    }
+    .footer-section {
+        margin-bottom: 0 !important;
+        text-align: center !important; /* Center-align text for better visual balance */
+        width: 100% !important;
+    }
+    .footer-section + .footer-section {
+        margin-top: var(--spacing-3) !important;
+    }
+    /* Make all headings the same size for consistent alignment */
+    .footer-title {
+        font-size: var(--font-size-lg) !important;
+        margin-bottom: var(--spacing-3) !important;
+        font-weight: 600 !important;
+    }
+    /* Footer logo styling */
+    .footer-logo {
+        max-width: 120px !important;
+        height: auto !important;
+        margin-top: var(--spacing-3) !important;
+        border-radius: var(--border-radius) !important;
+    }
+    </style>
+    <div class="container">
+        <div class="footer-content">
+            
+            <!-- Footer Main -->
+            <div class="footer-main">
+                <div class="footer-section">
+                    <h4 class="footer-title">Computer Science Association</h4>
+                    <p class="footer-description">
+                        Building skills, projects, and community for all STEM majors at Houston Community College.
+                    </p>
+                    <img src="images/csa-transparent.jpg" alt="CSA Logo" class="footer-logo">
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Social Media</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://discord.gg/hcc-csa" aria-label="Join our Discord">Discord</a></li>
+                        <li><a href="mailto:president@hccs.edu" aria-label="Email us">Email</a></li>
+                        <li><a href="https://linkedin.com/company/hcc-csa" aria-label="Follow us on LinkedIn" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/hcc_csa" aria-label="Follow us on Instagram" target="_blank">Instagram</a></li>
+                        <li><a href="https://facebook.com/hcc.csa" aria-label="Follow us on Facebook" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="https://eagleengage.hccs.edu/organization/csa" target="_blank">Join CSA</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="assets/docs/csa-constitution.pdf" target="_blank">Constitution (PDF)</a></li>
+                        <li><a href="mailto:president@hccs.edu">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">
+                        &copy; 2024 Computer Science Association at Houston Community College. 
+                        All rights reserved.
+                    </p>
+                    
+                    <div class="footer-disclaimer">
+                        <p>
+                            <small>
+                                HCC logo is a placeholder. Official branding will be used only with college approval. 
+                                This is a student organization website.
+                            </small>
+                        </p>
+                    </div>
+                    
+                    <div class="accessibility-statement">
+                        <p>
+                            <small>
+                                Committed to digital accessibility. If you encounter barriers, please 
+                                <a href="mailto:president@hccs.edu">contact us</a>.
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/form-validate.js"></script>
+<script src="assets/js/analytics.js"></script>
+
+</body>
+</html>
