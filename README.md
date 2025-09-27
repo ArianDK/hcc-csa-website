@@ -363,21 +363,3 @@ Website built with CSA Website Template by Houston Community College CSA
 *Building the next generation of technology leaders*
 
 ---
-
-## Project Statistics
-
-- **Development Time**: 3 months
-- **Lines of Code**: 5,000+
-- **Languages**: HTML, CSS, JavaScript
-- **Pages**: 6
-- **Features**: 20+
-- **Accessibility**: WCAG AA compliant
-
-## Acknowledgments
-
-- Houston Community College for institutional support
-- CSA members for feedback and testing
-- Open source community for inspiration and tools
-- GitHub for providing free hosting and collaboration tools
-
-*Last Updated: March 2024*
