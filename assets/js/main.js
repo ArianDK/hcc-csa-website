@@ -133,6 +133,69 @@
         }
     };
     
+    // Dropdown Menu Management
+    const DropdownManager = {
+        init: function() {
+            this.setupDropdowns();
+        },
+        
+        setupDropdowns: function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                
+                if (toggle) {
+                    toggle.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.toggleDropdown(dropdown);
+                    });
+                }
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.dropdown')) {
+                    this.closeAllDropdowns();
+                }
+            });
+            
+            // Close dropdowns on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    this.closeAllDropdowns();
+                }
+            });
+        },
+        
+        toggleDropdown: function(dropdown) {
+            const isActive = dropdown.classList.contains('active');
+            
+            // Close all other dropdowns first
+            this.closeAllDropdowns();
+            
+            if (!isActive) {
+                dropdown.classList.add('active');
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', 'true');
+                }
+            }
+        },
+        
+        closeAllDropdowns: function() {
+            const activeDropdowns = document.querySelectorAll('.dropdown.active');
+            
+            activeDropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+                const toggle = dropdown.querySelector('.dropdown-toggle');
+                if (toggle) {
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+    };
+    
     // Smooth Scrolling for Anchor Links
     const SmoothScroll = {
         init: function() {
@@ -321,6 +384,7 @@
     function init() {
         ThemeManager.init();
         MobileNav.init();
+        DropdownManager.init();
         SmoothScroll.init();
         StickyJoinButton.init();
         ModalManager.init();

@@ -35,7 +35,6 @@ The HCC CSA Website is a static website built with modern web technologies to se
 #### Homepage
 - Hero section with organization introduction
 - Why join CSA section with benefits
-- Upcoming events showcase
 - STEM inclusivity messaging
 - Social proof with member testimonials
 
@@ -46,13 +45,6 @@ The HCC CSA Website is a static website built with modern web technologies to se
 - Leadership team structure
 - Elections and governance information
 - Campus locations and meeting details
-
-#### Events Page
-- Upcoming events with detailed information
-- Event types and categories
-- Recent events showcase
-- Event guidelines and participation instructions
-- Calendar integration (future enhancement)
 
 #### Get Involved Page
 - Different levels of involvement
@@ -151,7 +143,6 @@ hcc-csa-website/
 ├── images/                    # Website images and logos
 ├── index.html                 # Homepage
 ├── about.html                 # About page
-├── events.html                # Events page
 ├── involved.html              # Get involved page
 ├── join.html                  # Join CSA page
 ├── privacy.html               # Privacy policy
@@ -205,11 +196,6 @@ Update contact information throughout the website:
 - Social media links in the footer
 
 #### Event Information
-Update events in `events.html`:
-- Add new upcoming events
-- Update event dates and locations
-- Modify event descriptions
-
 #### Organization Information
 Update organization details in `about.html`:
 - Mission statement

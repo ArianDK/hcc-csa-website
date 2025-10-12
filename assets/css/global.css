@@ -230,6 +230,28 @@ a:focus {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* Center the Why Join CSA grid */
+#why-join .grid-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-6);
+}
+
+#why-join .grid-3 .card {
+  flex: 0 0 300px;
+  max-width: 300px;
+}
+
+/* Center content inside cards in Why Join CSA section */
+#why-join .card {
+  text-align: center;
+}
+
+#why-join .card-body {
+  text-align: center;
+}
+
 .grid-4 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
@@ -574,6 +596,262 @@ select.form-control {
   color: white !important;
 }
 
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
+.dropdown-toggle::after {
+  content: '▼';
+  font-size: 0.7em;
+  margin-left: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle:hover::after,
+.dropdown.active .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  min-width: 160px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.dropdown.active .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.dropdown-link:hover {
+  background-color: var(--bg-secondary);
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+/* Leadership Section */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leadership-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-6);
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.leadership-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+}
+
+.leadership-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-4);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  position: relative;
+}
+
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-icon {
+  font-size: var(--font-size-xl);
+}
+
+/* Default: show initials, hide image */
+.leadership-avatar .avatar-initials {
+  display: block;
+  color: white;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  letter-spacing: 0.5px;
+}
+
+.leadership-avatar .avatar-image {
+  display: none;
+}
+
+/* When image is present, hide initials and show image */
+.leadership-avatar .avatar-image {
+  display: block;
+}
+
+.leadership-avatar .avatar-image ~ .avatar-initials {
+  display: none;
+}
+
+.leadership-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin: 0 0 var(--spacing-2);
+}
+
+.leadership-title {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  font-weight: var(--font-weight-medium);
+}
+
+.leadership-card-link {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+  border: 2px dashed var(--border-dark);
+  cursor: pointer;
+  position: relative;
+}
+
+.leadership-card-link:hover {
+  border-style: solid;
+  border-color: var(--secondary-color);
+  background: linear-gradient(135deg, var(--secondary-light), var(--secondary-color));
+}
+
+.leadership-card-link:hover .leadership-name,
+.leadership-card-link:hover .leadership-title {
+  color: white;
+}
+
+.leadership-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: transparent;
+  font-weight: var(--font-weight-semibold);
+}
+
+.leadership-card-link:hover .leadership-link {
+  color: transparent;
+}
+
+/* Mobile responsiveness for leadership */
+@media (max-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .leadership-card {
+    padding: var(--spacing-4);
+  }
+  
+  .leadership-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .avatar-initials {
+    font-size: var(--font-size-base);
+  }
+}
+
+/* Board Year Selector */
+.board-year-selector {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
+}
+
+.year-button {
+  padding: var(--spacing-3) var(--spacing-6);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.year-button:hover {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+.year-button.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.board-section {
+  display: none;
+}
+
+.board-section.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .board-year-selector {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .year-button {
+    width: 200px;
+  }
+}
+
 /* Mobile Menu */
 .mobile-menu-toggle {
   display: flex;
@@ -836,6 +1114,23 @@ select.form-control {
 .bg-primary { background-color: var(--bg-primary); }
 .bg-secondary { background-color: var(--bg-secondary); }
 .bg-tertiary { background-color: var(--bg-tertiary); }
+.bg-primary-dark { 
+  background-color: var(--primary-color); 
+  color: white;
+}
+
+.bg-primary-dark h1,
+.bg-primary-dark h2,
+.bg-primary-dark h3,
+.bg-primary-dark h4,
+.bg-primary-dark h5,
+.bg-primary-dark h6 {
+  color: white;
+}
+
+.bg-primary-dark .text-secondary {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .mb-0 { margin-bottom: 0; }
 .mb-1 { margin-bottom: var(--spacing-1); }
