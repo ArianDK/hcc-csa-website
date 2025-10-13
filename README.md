@@ -1,8 +1,8 @@
 # HCC Computer Science Association Website
 
-![HCC CSA Logo](images/logo-gradient.jpg)
+![HCC CSA Logo](assets/img/logo-gradient.jpg)
 
-A modern, responsive static website for the Computer Science Association at Houston Community College. This website showcases the organization's mission, events, and provides information for prospective members.
+A modern, responsive static website for the Computer Science Association at Houston City College. This website showcases the organization's mission, leadership, and provides information for prospective members.
 
 ## Table of Contents
 
@@ -16,7 +16,7 @@ A modern, responsive static website for the Computer Science Association at Hous
 
 ## Overview
 
-The HCC CSA Website is a static website built with modern web technologies to serve the Computer Science Association at Houston Community College. It provides an informative platform for student recruitment, event information, and community engagement.
+The HCC CSA Website is a static website built with modern web technologies to serve the Computer Science Association at Houston City College. It provides an informative platform for student recruitment, leadership information, and community engagement.
 
 ### Key Highlights
 
@@ -26,7 +26,7 @@ The HCC CSA Website is a static website built with modern web technologies to se
 - **Accessibility Compliant**: WCAG AA standards for inclusive access
 - **STEM Inclusive**: Welcomes all Science, Technology, Engineering, and Mathematics majors
 
-![Website Screenshot](images/csa-dark.jpg)
+![Website Screenshot](assets/img/csa-dark.jpg)
 
 ## Features
 
@@ -36,33 +36,22 @@ The HCC CSA Website is a static website built with modern web technologies to se
 - Hero section with organization introduction
 - Why join CSA section with benefits
 - STEM inclusivity messaging
-- Social proof with member testimonials
+- Our Leadership section with current board members
+- Social media integration with dropdown navigation
 
 #### About Page
 - Mission statement and organizational values
-- What we do section with comprehensive services
-- Membership information and requirements
-- Leadership team structure
-- Elections and governance information
 - Campus locations and meeting details
+- Contact information and social media links
 
-#### Get Involved Page
-- Different levels of involvement
-- Leadership opportunities
-- Special projects and initiatives
-- How to get started guide
-- Benefits of involvement
-
-#### Join CSA Page
-- Contact methods for joining
-- Discord server integration
-- Email contact information
-- FAQ section
-- Membership benefits
+#### Previous Board Members Page
+- Historical leadership information
+- Year-based navigation for different board terms
+- Leadership team structure and roles
 
 #### Privacy Policy
 - Comprehensive privacy policy
-- Data handling practices
+- No data collection policy
 - Contact information for privacy requests
 
 ## Technology Stack
@@ -70,7 +59,7 @@ The HCC CSA Website is a static website built with modern web technologies to se
 ### Frontend
 - **HTML5**: Semantic markup with accessibility features
 - **CSS3**: Modern styling with CSS Grid and Flexbox
-- **JavaScript (ES6+)**: Interactive functionality and form validation
+- **JavaScript (ES6+)**: Interactive functionality including dropdown menus
 - **Responsive Design**: Mobile-first approach with breakpoint optimization
 
 ### Hosting & Deployment
@@ -88,7 +77,7 @@ The HCC CSA Website is a static website built with modern web technologies to se
 
 1. **Fork or Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/hcc-csa-website.git
+git clone https://github.com/ariandk/hcc-csa-website.git
 cd hcc-csa-website
 ```
 
@@ -104,30 +93,6 @@ cd hcc-csa-website
    - Configure DNS settings with your domain provider
    - Update all internal links to use your custom domain
 
-### Local Development
-
-1. **Clone the Repository**
-```bash
-git clone https://github.com/yourusername/hcc-csa-website.git
-cd hcc-csa-website
-```
-
-2. **Serve Locally**
-```bash
-# Using Python 3
-python -m http.server 8000
-
-# Using Node.js (if you have http-server installed)
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-```
-
-3. **View the Website**
-   - Open your browser and go to `http://localhost:8000`
-   - The website will be served with all functionality
-
 ### File Structure
 
 ```
@@ -136,33 +101,18 @@ hcc-csa-website/
 │   ├── css/
 │   │   └── global.css          # Main stylesheet
 │   ├── js/
-│   │   ├── main.js            # Main JavaScript functionality
-│   │   ├── form-validate.js   # Form validation
-│   │   └── analytics.js       # Analytics tracking
+│   │   └── main.js            # Main JavaScript functionality
 │   └── img/                   # Image assets
-├── images/                    # Website images and logos
 ├── index.html                 # Homepage
 ├── about.html                 # About page
-├── involved.html              # Get involved page
-├── join.html                  # Join CSA page
+├── previous-board.html        # Previous board members page
 ├── privacy.html               # Privacy policy
-├── README.md                  # This file
-└── .gitignore                 # Git ignore file
+└── README.md                  # This file
 ```
 
 ## Customization
 
 ### Branding and Styling
-
-#### Logo and Images
-1. Replace images in the `/images/` directory:
-   - `hcc-logo-white.png` - White version of HCC logo
-   - `hcc-logo.png` - Regular version of HCC logo
-   - `csa-transparent.jpg` - CSA logo for footer
-   - `logo-gradient.jpg` - Main CSA logo
-   - `csa-dark.jpg` - Website screenshot
-
-2. Update favicon files in `/assets/img/` directory
 
 #### Color Scheme
 Edit CSS variables in `assets/css/global.css`:
@@ -189,50 +139,30 @@ Edit CSS variables in `assets/css/global.css`:
 
 ### Content Customization
 
-#### Contact Information
-Update contact information throughout the website:
-- Email addresses (search for `president@hccs.edu`)
-- Discord server links (search for `discord.gg/hcc-csa`)
-- Social media links in the footer
+#### Leadership Information
+Update leadership details in `index.html`:
+- Current board member names and positions
+- Leadership photos (place in `assets/img/leadership/` folder)
+- Previous board member information in `previous-board.html`
 
-#### Event Information
 #### Organization Information
 Update organization details in `about.html`:
 - Mission statement
-- Leadership information
 - Campus locations
 - Contact details
 
-### Adding New Pages
+### Adding Leadership Photos
 
-1. **Create HTML File**
-   - Create a new `.html` file in the root directory
-   - Copy the structure from an existing page
+1. **Prepare Images**
+   - Recommended size: 200x200px or larger
+   - Format: JPG, PNG, or WebP
+   - Should be square for best results
+   - Place images in: `assets/img/leadership/` folder
 
-2. **Update Navigation**
-   - Add navigation link in all HTML files
-   - Update the header section in each file
-
-3. **Update Footer**
-   - Add link to footer section in all HTML files
-
-### SEO Optimization
-
-#### Meta Tags
-Update meta tags in each HTML file:
-```html
-<title>Page Title - Computer Science Association at HCC</title>
-<meta name="description" content="Page description">
-<meta name="keywords" content="relevant, keywords, here">
-```
-
-#### Open Graph Tags
-Update social media sharing tags:
-```html
-<meta property="og:title" content="Page Title">
-<meta property="og:description" content="Page description">
-<meta property="og:image" content="https://yourusername.github.io/hcc-csa-website/images/logo-gradient.jpg">
-```
+2. **Update HTML**
+   - Uncomment the image tags in leadership cards
+   - Update the `src` attribute to point to your image
+   - Comment out the initials fallback
 
 ## Contributing
 
@@ -265,70 +195,17 @@ git push origin feature/your-feature-name
    - Describe your changes
    - Submit the pull request
 
-### Code Standards
-
-#### HTML Standards
-- Use semantic HTML5 markup
-- Include proper accessibility attributes
-- Validate HTML using W3C validator
-- Maintain consistent indentation
-
-#### CSS Standards
-- Use CSS custom properties for colors and spacing
-- Follow mobile-first responsive design
-- Use meaningful class names
-- Comment complex CSS rules
-
-#### JavaScript Standards
-- Use modern ES6+ syntax
-- Add comments for complex logic
-- Handle errors gracefully
-- Test across different browsers
-
-### Testing Guidelines
-
-#### Functionality Testing
-- Test all navigation links
-- Verify responsive design on different screen sizes
-- Check form functionality (if applicable)
-- Test external links
-
-#### Browser Testing
-- Test in Chrome, Firefox, Safari, and Edge
-- Check mobile responsiveness
-- Verify accessibility with screen readers
-- Test with JavaScript disabled
-
-#### Performance Testing
-- Check page load times
-- Optimize images for web
-- Minify CSS and JavaScript (if needed)
-- Test on slow connections
-
 ## License
 
 ### Usage Rights
 
-This project is developed for the Computer Science Association at Houston Community College.
+This project is developed for the Computer Science Association at Houston City College.
 
 **Permitted Uses:**
 - Use by educational institutions
 - Modification for organizational needs
 - Deployment on institutional servers
 - Academic research and learning
-
-**Restrictions:**
-- Commercial redistribution without permission
-- Removal of attribution requirements
-- Use for non-educational purposes
-
-### Attribution
-
-If you use this codebase for your student organization, please include:
-
-```
-Website built with CSA Website Template by Houston Community College CSA
-```
 
 ### Support and Contact
 
@@ -339,12 +216,12 @@ Website built with CSA Website Template by Houston Community College CSA
 
 #### Contact Information
 - **Technical Issues**: CSA Technology Committee
-- **General Questions**: president@hccs.edu
+- **General Questions**: Contact through social media links
 - **Website Issues**: Create a GitHub issue
 
 ---
 
-**Computer Science Association • Houston Community College**
+**Computer Science Association • Houston City College**
 
 *Building the next generation of technology leaders*
 
