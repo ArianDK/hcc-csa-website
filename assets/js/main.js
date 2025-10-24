@@ -223,6 +223,40 @@
         }
     };
     
+    // Transparent Header Logic
+    const TransparentHeader = {
+        init: function() {
+            this.setupTransparentHeader();
+        },
+        
+        setupTransparentHeader: function() {
+            const header = document.querySelector('.site-header');
+            if (!header) return;
+            
+            let lastScrollTop = 0;
+            const scrollThreshold = 50; // Pixels to scroll before changing state
+            
+            const handleScroll = Utils.throttle(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > scrollThreshold) {
+                    // Scrolled down - make transparent
+                    header.classList.add('transparent');
+                } else {
+                    // At top - make solid
+                    header.classList.remove('transparent');
+                }
+                
+                lastScrollTop = scrollTop;
+            }, 16); // ~60fps
+            
+            window.addEventListener('scroll', handleScroll);
+            
+            // Initialize state
+            handleScroll();
+        }
+    };
+    
     // Sticky Join Button Logic
     const StickyJoinButton = {
         init: function() {
@@ -386,6 +420,7 @@
         MobileNav.init();
         DropdownManager.init();
         SmoothScroll.init();
+        TransparentHeader.init();
         StickyJoinButton.init();
         ModalManager.init();
         
