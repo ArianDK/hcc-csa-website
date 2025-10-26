@@ -1,7 +1,6 @@
 # HCC Computer Science Association Website
 
-![HCC CSA Logo](assets/img/logo-gradient.jpg)
-
+<img src="assets/img/logo-gradient.jpg" alt="HCC CSA Logo" width="100" align="right"/>
 A modern, responsive static website for the Computer Science Association at Houston City College. This website showcases the organization's mission, leadership, and provides information for prospective members.
 
 ## Table of Contents
@@ -19,14 +18,14 @@ A modern, responsive static website for the Computer Science Association at Hous
 The HCC CSA Website is a static website built with modern web technologies to serve the Computer Science Association at Houston City College. It provides an informative platform for student recruitment, leadership information, and community engagement.
 
 ### Key Highlights
-
+<img src="assets/img/csa-dark.jpg" alt="HCC CSA Logo" width="200" align="right"/>
 - **Modern Design**: Clean, responsive interface with professional styling
 - **Static Website**: Fast loading, secure, and easy to deploy
 - **GitHub Pages Ready**: Optimized for GitHub Pages hosting
 - **Accessibility Compliant**: WCAG AA standards for inclusive access
 - **STEM Inclusive**: Welcomes all Science, Technology, Engineering, and Mathematics majors
 
-![Website Screenshot](assets/img/csa-dark.jpg)
+
 
 ## Features
 
