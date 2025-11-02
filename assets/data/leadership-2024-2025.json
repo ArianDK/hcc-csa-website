@@ -1,0 +1,31 @@
+{
+  "year": "2024-2025",
+  "academicYear": "2024-2025 Academic Year",
+  "members": [
+    {
+      "name": "Muskaan Shahzad",
+      "title": "President",
+      "image": null,
+      "initials": "MS"
+    },
+    {
+      "name": "Julia Bernard",
+      "title": "Vice President",
+      "image": null,
+      "initials": "JB"
+    },
+    {
+      "name": "Arian Din-Kirkebo",
+      "title": "Chief Strategy Officer",
+      "image": null,
+      "initials": "ADK"
+    },
+    {
+      "name": "Hisham Macaraya",
+      "title": "Chief Technology Officer",
+      "image": null,
+      "initials": "HM"
+    }
+  ]
+}
+

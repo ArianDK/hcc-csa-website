@@ -246,121 +246,19 @@
 
     <!-- Our Leadership -->
     <!-- 
-    INSTRUCTIONS FOR LEADERSHIP CARDS:
+    Leadership cards are dynamically loaded from JSON data files.
+    To update leadership:
+    1. Edit assets/data/leadership-YYYY-YYYY.json (where YYYY-YYYY is the academic year)
+    2. Add or update member entries with name, title, image (optional), and initials (optional)
+    3. The homepage automatically displays the most recent year
     
-    To add a photo:
-    1. Uncomment the <img> tag in the leadership-avatar div
-    2. Update the src path to point to your image file
-    3. Comment out or remove the <span class="avatar-initials"> tag
-    
-    To use initials only:
-    1. Keep the <span class="avatar-initials"> tag active
-    2. Make sure the <img> tag is commented out
-    
-    Image requirements:
-    - Recommended size: 200x200px or larger
-    - Format: JPG, PNG, or WebP
-    - Should be square for best results
-    - Place images in: assets/img/leadership/ folder
+    To add a new leadership year:
+    1. Create a new file: assets/data/leadership-YYYY-YYYY.json
+    2. Update the years array in the script at the bottom of this page
     -->
     <section class="section">
-        <div class="container">
-            <div class="text-center mb-8">
-                <h2>Our Leadership</h2>
-                <p class="text-secondary">Meet the team that makes it all happen.</p>
-            </div>
-            
-            <div class="leadership-grid">
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <!-- Option 1: Use initials (current default) -->
-                        <span class="avatar-initials">AD</span>
-                        <!-- Option 2: Use image (uncomment and add image path when available) -->
-                        <!-- <img src="assets/img/leadership/arian-din-kirkebo.jpg" alt="Arian Din-Kirkebo" class="avatar-image"> -->
-                    </div>
-                    <h3 class="leadership-name">Arian Din-Kirkebo</h3>
-                    <p class="leadership-title">President</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <!-- Option 1: Use initials (current default) -->
-                        <span class="avatar-initials">JP</span>
-                        <!-- Option 2: Use image (uncomment and add image path when available) -->
-                        <!-- <img src="assets/img/leadership/john-pierre.jpg" alt="John Pierre" class="avatar-image"> -->
-                    </div>
-                    <h3 class="leadership-name">John Pierre</h3>
-                    <p class="leadership-title">Vice President</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <!-- Example with image (uncomment when you have the image) -->
-                        <!-- <img src="assets/img/leadership/khizar-ahmed.jpg" alt="Khizar Ahmed" class="avatar-image"> -->
-                        <!-- Fallback to initials when no image -->
-                        <span class="avatar-initials">KA</span>
-                    </div>
-                    <h3 class="leadership-name">Khizar Ahmed</h3>
-                    <p class="leadership-title">Chief Technology Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">RAS</span>
-                    </div>
-                    <h3 class="leadership-name">Rafay Ahmed Syed</h3>
-                    <p class="leadership-title">Treasurer</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">T</span>
-                    </div>
-                    <h3 class="leadership-name">Taki</h3>
-                    <p class="leadership-title">Coding Club Officer</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">GM</span>
-                    </div>
-                    <h3 class="leadership-name">Gabriel Morales</h3>
-                    <p class="leadership-title">Chief Information Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">NA</span>
-                    </div>
-                    <h3 class="leadership-name">Nelson Aviles</h3>
-                    <p class="leadership-title">Chief Strategy Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">ME</span>
-                    </div>
-                    <h3 class="leadership-name">Madison Emshousen</h3>
-                    <p class="leadership-title">Social Media Manager</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">JB</span>
-                    </div>
-                    <h3 class="leadership-name">Julia Bernard</h3>
-                    <p class="leadership-title">Chief Marketing Officer</p>
-                </div>
-                
-                <div class="leadership-card leadership-card-link">
-                    <div class="leadership-avatar">
-                        <span class="avatar-icon"></span>
-                    </div>
-                    <h3 class="leadership-name">Previous Board Members</h3>
-                    <p class="leadership-title">View Past Leadership</p>
-                    <a href="previous-board.html" class="leadership-link">View Previous Boards</a>
-                </div>
-            </div>
+        <div class="container" id="leadership-container">
+            <!-- Leadership cards will be dynamically inserted here -->
         </div>
     </section>
 
@@ -487,8 +385,29 @@
 
 <!-- Scripts -->
 <script src="assets/js/main.js"></script>
-<script src="assets/js/form-validate.js"></script>
 <script src="assets/js/analytics.js"></script>
+<script src="assets/js/leadership.js"></script>
+<script>
+// Load current leadership on homepage
+document.addEventListener('DOMContentLoaded', async function() {
+    // List of available leadership years (most recent first)
+    const availableYears = ['2025-2026', '2024-2025'];
+    
+    // Get the most recent year
+    const currentYear = availableYears[0];
+    
+    // Load and render the current leadership
+    await window.LeadershipLoader.renderLeadership(
+        'leadership-container',
+        currentYear,
+        {
+            showPreviousLink: true,
+            heading: 'Our Leadership',
+            subtitle: 'Meet the team that makes it all happen.'
+        }
+    );
+});
+</script>
 
 </body>
 </html>

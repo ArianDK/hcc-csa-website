@@ -1,0 +1,67 @@
+{
+  "year": "2025-2026",
+  "academicYear": "2025-2026 Academic Year",
+  "members": [
+    {
+      "name": "Arian Din-Kirkebo",
+      "title": "President",
+      "image": "assets/img/leadership-2025-2026/arian-dk.jpg",
+      "initials": null
+    },
+    {
+      "name": "John Pierre",
+      "title": "Vice President",
+      "image": "assets/img/leadership-2025-2026/john-p.png",
+      "initials": null
+    },
+    {
+      "name": "Khizar Ahmed",
+      "title": "Chief Technology Officer",
+      "image": "assets/img/leadership-2025-2026/khizar-a.png",
+      "initials": null
+    },
+    {
+      "name": "Rafay Ahmed Syed",
+      "title": "Treasurer",
+      "image": "assets/img/leadership-2025-2026/rafay-s.jpeg",
+      "initials": null
+    },
+    {
+      "name": "Taki Boubekri",
+      "title": "Coding Club Officer",
+      "image": null,
+      "initials": "TB"
+    },
+    {
+      "name": "Gabriel Morales",
+      "title": "Chief Information Officer",
+      "image": "assets/img/leadership-2025-2026/gabriel-m.png",
+      "initials": null
+    },
+    {
+      "name": "Nelson Aviles",
+      "title": "Chief Strategy Officer",
+      "image": null,
+      "initials": "NA"
+    },
+    {
+      "name": "Madison Emshousen",
+      "title": "Social Media Manager",
+      "image": "assets/img/leadership-2025-2026/maddie-e.jpg",
+      "initials": null
+    },
+    {
+      "name": "Julia Bernard",
+      "title": "Chief Marketing Officer",
+      "image": "assets/img/leadership-2025-2026/julia-b.jpg",
+      "initials": null
+    },
+    {
+      "name": "Manuel O.",
+      "title": "Chief Representative",
+      "image": "assets/img/leadership-2025-2026/manuel-o.jpg",
+      "initials": null
+    }
+  ]
+}
+

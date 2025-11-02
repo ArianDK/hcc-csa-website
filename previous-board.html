@@ -128,148 +128,16 @@
         </div>
     </section>
 
-    <!-- Board Year Selection -->
-    <section class="section">
-        <div class="container">
-            <div class="text-center mb-8">
-                <h2>Select Academic Year</h2>
-                <p class="text-secondary">Choose a year to view the leadership team</p>
-            </div>
-            
-            <div class="board-year-selector">
-                <button class="year-button active" data-year="2025-2026">2025-2026 Board</button>
-                <button class="year-button" data-year="2024-2025">2024-2025 Board</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2025-2026 Board -->
-    <section class="section board-section active" id="board-2025-2026">
-        <div class="container">
-            <div class="text-center mb-8">
-                <h2>2024-2025 Academic Year</h2>
-                <p class="text-secondary">Current Leadership Team</p>
-            </div>
-            
-            <div class="leadership-grid">
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">ADK</span>
-                    </div>
-                    <h3 class="leadership-name">Arian Din-Kirkebo</h3>
-                    <p class="leadership-title">President</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">JP</span>
-                    </div>
-                    <h3 class="leadership-name">John Pierre</h3>
-                    <p class="leadership-title">Vice President</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">KA</span>
-                    </div>
-                    <h3 class="leadership-name">Khizar Ahmed</h3>
-                    <p class="leadership-title">Chief Technology Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">RAS</span>
-                    </div>
-                    <h3 class="leadership-name">Rafay Ahmed Syed</h3>
-                    <p class="leadership-title">Tresurer</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">TB</span>
-                    </div>
-                    <h3 class="leadership-name">Taki Boubekri</h3>
-                    <p class="leadership-title">Coding Club Officer</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">GM</span>
-                    </div>
-                    <h3 class="leadership-name">Gabriel Morales</h3>
-                    <p class="leadership-title">Chief Information Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">NA</span>
-                    </div>
-                    <h3 class="leadership-name">Nelson Aviles</h3>
-                    <p class="leadership-title">Chief Strategy Officer</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">ME</span>
-                    </div>
-                    <h3 class="leadership-name">Madison Emshousen</h3>
-                    <p class="leadership-title">Social Media Manager</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">JB</span>
-                    </div>
-                    <h3 class="leadership-name">Julia Bernard</h3>
-                    <p class="leadership-title">Chief Marketing Officer</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 2024-2025 Board -->
-    <section class="section board-section" id="board-2024-2025">
-        <div class="container">
-            <div class="text-center mb-8">
-                <h2>2024-2025 Academic Year</h2>
-                <p class="text-secondary">Previous Leadership Team</p>
-            </div>
-            
-            <div class="leadership-grid">
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">MS</span>
-                    </div>
-                    <h3 class="leadership-name">Muskaan Shahzad</h3>
-                    <p class="leadership-title">President</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">JB</span>
-                    </div>
-                    <h3 class="leadership-name">Julia Bernard</h3>
-                    <p class="leadership-title">Vice President</p>
-                </div>
-
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">ADK</span>
-                    </div>
-                    <h3 class="leadership-name">Arian Din-Kirkebo</h3>
-                    <p class="leadership-title">Cheif Strategy Officer</p>
-                </div>
-                
-                <div class="leadership-card">
-                    <div class="leadership-avatar">
-                        <span class="avatar-initials">HM</span>
-                    </div>
-                    <h3 class="leadership-name">Hisham Macaraya</h3>
-                    <p class="leadership-title">Chief Technology Officer</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Previous Board Members -->
+    <!-- 
+    Previous board members are dynamically loaded from JSON data files.
+    To add a new leadership year:
+    1. Create a new file: assets/data/leadership-YYYY-YYYY.json
+    2. Add the year to the years array in the script at the bottom of this page
+    -->
+    <div id="previous-boards-container">
+        <!-- Previous board sections will be dynamically inserted here -->
+    </div>
 
     <!-- Exit Button Section -->
     <section class="section">
@@ -389,28 +257,20 @@
 
 <!-- Scripts -->
 <script src="assets/js/main.js"></script>
-<script src="assets/js/form-validate.js"></script>
 <script src="assets/js/analytics.js"></script>
-
+<script src="assets/js/leadership.js"></script>
 <script>
-// Board Year Selection
-document.addEventListener('DOMContentLoaded', function() {
-    const yearButtons = document.querySelectorAll('.year-button');
-    const boardSections = document.querySelectorAll('.board-section');
+// Load all previous board years
+document.addEventListener('DOMContentLoaded', async function() {
+    // List of all available leadership years (most recent first)
+    // Add new years to this array as they become available
+    const availableYears = ['2025-2026', '2024-2025'];
     
-    yearButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const year = this.getAttribute('data-year');
-            
-            // Remove active class from all buttons and sections
-            yearButtons.forEach(btn => btn.classList.remove('active'));
-            boardSections.forEach(section => section.classList.remove('active'));
-            
-            // Add active class to clicked button and corresponding section
-            this.classList.add('active');
-            document.getElementById(`board-${year.replace('-', '-')}`).classList.add('active');
-        });
-    });
+    // Render all years with year selector
+    await window.LeadershipLoader.renderMultipleYears(
+        'previous-boards-container',
+        availableYears
+    );
 });
 </script>
 
